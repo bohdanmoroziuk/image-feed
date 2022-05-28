@@ -3,13 +3,19 @@ import { StatusBar } from 'expo-status-bar';
 
 import styles from './App.styles';
 
-import Avatar from 'src/components/Avatar';
+import AuthorRow from 'src/components/AuthorRow';
 
 export default function App() {
   return (
     <View style={styles.app}>
       <StatusBar style="auto" />
-      <Avatar color="teal" initials="FL" size={35} />
+      <AuthorRow
+        fullName="First Last"
+        linkText="Comments"
+        onPressLinkText={() => {
+          console.log('Pressed link!');
+        }}
+      />
     </View>
   );
 }

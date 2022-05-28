@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AuthorRow renders successfully 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "height": 50,
+      "paddingHorizontal": 10,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        },
+        Object {
+          "backgroundColor": "#0b0b9e",
+          "borderRadius": 17.5,
+          "height": 35,
+          "width": 35,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "white",
+        }
+      }
+    >
+      FL
+    </Text>
+  </View>
+  <Text
+    numberOfLines={1}
+    style={
+      Object {
+        "flex": 1,
+        "marginHorizontal": 6,
+      }
+    }
+  >
+    First Last
+  </Text>
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+  >
+    <Text
+      numberOfLines={1}
+    >
+      Comments
+    </Text>
+  </View>
+</View>
+`;
