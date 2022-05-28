@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar renders successfully 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+      },
+      Object {
+        "backgroundColor": "teal",
+        "borderRadius": 17.5,
+        "height": 35,
+        "width": 35,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "white",
+      }
+    }
+  >
+    FL
+  </Text>
+</View>
+`;

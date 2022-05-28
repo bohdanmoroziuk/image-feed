@@ -4,15 +4,37 @@ exports[`App renders successfully 1`] = `
 <View
   style={
     Object {
-      "alignItems": "center",
       "backgroundColor": "#fff",
       "flex": 1,
-      "justifyContent": "center",
+      "marginTop": 20,
     }
   }
 >
-  <Text>
-    Open up App.tsx to start working on your app!
-  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        },
+        Object {
+          "backgroundColor": "teal",
+          "borderRadius": 17.5,
+          "height": 35,
+          "width": 35,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "white",
+        }
+      }
+    >
+      FL
+    </Text>
+  </View>
 </View>
 `;
