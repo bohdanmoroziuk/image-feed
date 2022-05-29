@@ -73,18 +73,43 @@ exports[`Card renders successfully 1`] = `
       </Text>
     </View>
   </View>
-  <Image
-    source={
-      Object {
-        "uri": "https://unsplash.it/600/600",
-      }
-    }
+  <View
     style={
       Object {
         "aspectRatio": 1,
         "backgroundColor": "rgba(0, 0, 0, 0.02)",
       }
     }
-  />
+  >
+    <ActivityIndicator
+      size="large"
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    />
+    <Image
+      onLoad={[Function]}
+      source={
+        Object {
+          "uri": "https://unsplash.it/600/600",
+        }
+      }
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    />
+  </View>
 </View>
 `;

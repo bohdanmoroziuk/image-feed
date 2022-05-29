@@ -1,5 +1,5 @@
-import { FunctionComponent } from 'react';
-import { View, Image, ImageSourcePropType } from 'react-native';
+import { FunctionComponent, useState } from 'react';
+import { View, Image, ImageSourcePropType, ActivityIndicator } from 'react-native';
 
 import AuthorRow from 'src/components/AuthorRow';
 
@@ -17,16 +17,33 @@ export const Card: FunctionComponent<CardProps> = ({
   image,
   linkText,
   onPressLinkText,
-}) => (
-  <View>
-    <AuthorRow
-      fullName={fullName}
-      linkText={linkText}
-      onPressLinkText={onPressLinkText}
-    />
-    <Image
-      style={styles.image}
-      source={image}
-    />
-  </View>
-);
+}) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleImageLoad = () => {
+    setIsLoading(false);
+  }
+
+  return (
+    <View>
+      <AuthorRow
+        fullName={fullName}
+        linkText={linkText}
+        onPressLinkText={onPressLinkText}
+      />
+      <View style={styles.imageContainer}>
+        {isLoading && (
+          <ActivityIndicator
+            style={styles.loader}
+            size="large"
+          />
+        )}
+        <Image
+          style={styles.image}
+          source={image}
+          onLoad={handleImageLoad}
+        />
+      </View>
+    </View>
+  );
+};
