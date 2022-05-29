@@ -10,8 +10,8 @@ import styles from './AuthorRow.styles'
 
 export interface AuthorRowProps {
   fullName: string;
-  linkText: string;
-  onPressLinkText: () => void;
+  linkText?: string;
+  onPressLinkText?: () => void;
 }
 
 export const AuthorRow: FunctionComponent<AuthorRowProps> = ({
@@ -33,11 +33,13 @@ export const AuthorRow: FunctionComponent<AuthorRowProps> = ({
       >
         {fullName}
       </Text>
-      <TouchableOpacity onPress={onPressLinkText}>
-        <Text numberOfLines={1}>
-          {linkText}
-        </Text>
-      </TouchableOpacity>
+      {!!linkText && (
+        <TouchableOpacity onPress={onPressLinkText}>
+          <Text numberOfLines={1}>
+            {linkText}
+          </Text>
+        </TouchableOpacity>
+      )}
     </View>
   );
 };

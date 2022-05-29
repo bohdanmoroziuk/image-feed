@@ -1,0 +1,222 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardList renders successfully 1`] = `
+<RCTScrollView
+  data={
+    Array [
+      Object {
+        "author": "Bob Ross",
+        "id": "0",
+      },
+      Object {
+        "author": "Chuck Norris",
+        "id": "1",
+      },
+    ]
+  }
+  getItem={[Function]}
+  getItemCount={[Function]}
+  keyExtractor={[Function]}
+  onContentSizeChange={[Function]}
+  onLayout={[Function]}
+  onMomentumScrollBegin={[Function]}
+  onMomentumScrollEnd={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEndDrag={[Function]}
+  removeClippedSubviews={false}
+  renderItem={[Function]}
+  scrollEventThrottle={50}
+  stickyHeaderIndices={Array []}
+  viewabilityConfigCallbackPairs={Array []}
+>
+  <View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "height": 50,
+              "paddingHorizontal": 10,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                },
+                Object {
+                  "backgroundColor": "#c0b8e0",
+                  "borderRadius": 17.5,
+                  "height": 35,
+                  "width": 35,
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "white",
+                }
+              }
+            >
+              BR
+            </Text>
+          </View>
+          <Text
+            numberOfLines={1}
+            style={
+              Object {
+                "flex": 1,
+                "marginHorizontal": 6,
+              }
+            }
+          >
+            Bob Ross
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "aspectRatio": 1,
+              "backgroundColor": "rgba(0, 0, 0, 0.02)",
+            }
+          }
+        >
+          <ActivityIndicator
+            size="large"
+            style={
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          />
+          <Image
+            onLoad={[Function]}
+            source={
+              Object {
+                "uri": "https://unsplash.it/600/600?image=0",
+              }
+            }
+            style={
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "height": 50,
+              "paddingHorizontal": 10,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                },
+                Object {
+                  "backgroundColor": "#bb144e",
+                  "borderRadius": 17.5,
+                  "height": 35,
+                  "width": 35,
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "white",
+                }
+              }
+            >
+              CN
+            </Text>
+          </View>
+          <Text
+            numberOfLines={1}
+            style={
+              Object {
+                "flex": 1,
+                "marginHorizontal": 6,
+              }
+            }
+          >
+            Chuck Norris
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "aspectRatio": 1,
+              "backgroundColor": "rgba(0, 0, 0, 0.02)",
+            }
+          }
+        >
+          <ActivityIndicator
+            size="large"
+            style={
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          />
+          <Image
+            onLoad={[Function]}
+            source={
+              Object {
+                "uri": "https://unsplash.it/600/600?image=1",
+              }
+            }
+            style={
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;

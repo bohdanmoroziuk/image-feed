@@ -1,22 +1,20 @@
 import { View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
-import Card from 'src/components/Card'
+import CardList from 'src/components/CardList';
 
 import styles from './App.styles';
+
+const items = [
+  { id: '0', author: "Bob Ross" },
+  { id: '1', author: "Chuck Norris" },
+];
 
 export default function App() {
   return (
     <View style={styles.app}>
       <StatusBar style="auto" />
-      <Card 
-        fullName="First Last"
-        linkText="Comments"
-        image={{ uri: 'https://unsplash.it/600/600' }}
-        onPressLinkText={() => {
-          console.log('Pressed link!');
-        }}
-      />
+      <CardList items={items} />
     </View>
   );
 }

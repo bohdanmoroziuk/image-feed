@@ -8,8 +8,8 @@ import styles from './Card.styles';
 export interface CardProps {
   fullName: string;
   image: ImageSourcePropType;
-  linkText: string;
-  onPressLinkText: () => void;
+  linkText?: string;
+  onPressLinkText?: () => void;
 }
 
 export const Card: FunctionComponent<CardProps> = ({
