@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommentInput renders successfully 1`] = `
+<View
+  style={
+    Object {
+      "borderBottomColor": "rgba(0, 0, 0, 0.1)",
+      "borderBottomWidth": 0.5,
+      "height": 60,
+      "paddingHorizontal": 20,
+    }
+  }
+>
+  <TextInput
+    onChangeText={[Function]}
+    onSubmitEditing={[Function]}
+    placeholder="Leave a comment"
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+    underlineColorAndroid="transparent"
+    value=""
+  />
+</View>
+`;
