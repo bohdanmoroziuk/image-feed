@@ -11,7 +11,7 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
-  feed: {
+  screen: {
     flex: 1,
     marginTop: Platform.OS === 'android' || platformVersion < 11
       ? Constants.statusBarHeight

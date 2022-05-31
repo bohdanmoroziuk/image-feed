@@ -1,13 +1,15 @@
 import { FunctionComponent, useState, useEffect } from 'react';
 import { SafeAreaView, Text, ActivityIndicator, ViewProps } from 'react-native';
 
-import { Item } from 'src/types';
+import { Item, Comment } from 'src/types';
 
 import fetchImages from 'src/api/fetchImages';
 import CardList from 'src/components/CardList';
 
 export interface FeedProps {
   style?: ViewProps['style'];
+  commentsForItem: Record<string, Comment[]>;
+  onPressComments: (id: string) => void;
 }
 
 interface State {
@@ -16,7 +18,11 @@ interface State {
   error: string | null;
 }
 
-export const Feed: FunctionComponent<FeedProps> = ({ style }) => {
+export const Feed: FunctionComponent<FeedProps> = ({
+  style,
+  commentsForItem,
+  onPressComments
+}) => {
   const [state, setState] = useState<State>({
     items: [],
     loading: true,
@@ -51,7 +57,11 @@ export const Feed: FunctionComponent<FeedProps> = ({ style }) => {
 
   return (
     <SafeAreaView style={style} testID="feed">
-      <CardList items={state.items} />
+      <CardList
+        commentsForItem={commentsForItem}
+        items={state.items}
+        onPressComments={onPressComments}
+      />
     </SafeAreaView>
   );
 };

@@ -23,7 +23,7 @@ export const Comments: FunctionComponent<CommentsProps> = ({
   <SafeAreaView style={style}>
     <NavigationBar
       title="Comments"
-      closeButtonText="close"
+      closeButtonText="Close"
       onClose={onClose}
     />
     <CommentInput
