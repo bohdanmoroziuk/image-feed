@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommentList renders successfully 1`] = `
+<RCTScrollView>
+  <View>
+    <View
+      style={
+        Object {
+          "borderBottomColor": "rgba(0, 0, 0, 0.05)",
+          "borderBottomWidth": 0.5,
+          "marginLeft": 20,
+          "paddingRight": 20,
+          "paddingVertical": 20,
+        }
+      }
+    >
+      <Text>
+        Awesome
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "borderBottomColor": "rgba(0, 0, 0, 0.05)",
+          "borderBottomWidth": 0.5,
+          "marginLeft": 20,
+          "paddingRight": 20,
+          "paddingVertical": 20,
+        }
+      }
+    >
+      <Text>
+        Nothing special
+      </Text>
+    </View>
+  </View>
+</RCTScrollView>
+`;
