@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavigationBar renders successfully 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "borderBottomColor": "rgba(0, 0, 0, 0.1)",
+      "borderBottomWidth": 0.5,
+      "height": 40,
+      "justifyContent": "center",
+    }
+  }
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "bottom": 0,
+        "justifyContent": "center",
+        "left": 20,
+        "opacity": 1,
+        "position": "absolute",
+        "top": 0,
+      }
+    }
+  >
+    <Text>
+      Close
+    </Text>
+  </View>
+  <Text
+    style={
+      Object {
+        "fontWeight": "500",
+      }
+    }
+  >
+    Comments
+  </Text>
+</View>
+`;
