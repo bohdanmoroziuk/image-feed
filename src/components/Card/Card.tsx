@@ -1,10 +1,9 @@
-import { FunctionComponent, useState } from 'react';
+import { FunctionComponent, useState, memo } from 'react';
 import { View, Image, ImageSourcePropType, ActivityIndicator } from 'react-native';
 
 import AuthorRow from 'src/components/AuthorRow';
 
 import styles from './Card.styles';
-
 export interface CardProps {
   fullName: string;
   image: ImageSourcePropType;
@@ -12,7 +11,11 @@ export interface CardProps {
   onPressLinkText?: () => void;
 }
 
-export const Card: FunctionComponent<CardProps> = ({
+const areCardPropsEqual = (prevProps: CardProps, nextProps: CardProps) => {
+  return prevProps.linkText === nextProps.linkText;
+};
+
+export const Card: FunctionComponent<CardProps> = memo(({
   fullName,
   image,
   linkText,
@@ -46,4 +49,4 @@ export const Card: FunctionComponent<CardProps> = ({
       </View>
     </View>
   );
-};
+}, areCardPropsEqual);
