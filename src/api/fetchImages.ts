@@ -1,8 +1,9 @@
+import axios from 'axios';
+
 import { Item } from 'src/types';
 
 export default async function fetchImages(): Promise<Item[]> {
-  const response = await fetch('https://unsplash.it/list');
-  const images = await response.json();
+  const response = await axios.get('https://unsplash.it/list');
 
-  return images;
+  return response.data;
 }

@@ -42,15 +42,15 @@ export const Feed: FunctionComponent<FeedProps> = ({ style }) => {
   }, []);
 
   if (state.loading) {
-    return <ActivityIndicator size="large" />
+    return <ActivityIndicator size="large" testID="loader" />
   }
 
   if (state.error) {
-    return <Text>{state.error}</Text>
+    return <Text testID="error">{state.error}</Text>
   }
 
   return (
-    <SafeAreaView style={style}>
+    <SafeAreaView style={style} testID="feed">
       <CardList items={state.items} />
     </SafeAreaView>
   );
