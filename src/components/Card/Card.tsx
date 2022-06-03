@@ -4,6 +4,7 @@ import { View, Image, ImageSourcePropType, ActivityIndicator } from 'react-nativ
 import AuthorRow from 'src/components/AuthorRow';
 
 import styles from './Card.styles';
+
 export interface CardProps {
   fullName: string;
   image: ImageSourcePropType;
