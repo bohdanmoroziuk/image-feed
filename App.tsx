@@ -1,6 +1,7 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { View, Modal } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import uuid from 'react-native-uuid';
 
 import { Comment, Comments } from 'src/types';
@@ -9,6 +10,8 @@ import FeedScreen from 'src/screens/Feed';
 import CommentsScreen from 'src/screens/Comments';
 
 import styles from './App.styles';
+
+const COMMENTS_STORAGE_KEY = '@comments-storage-key';
 
 export default function App() {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -36,24 +39,47 @@ export default function App() {
     setSelectedItemId(null);
   };
 
-  const addComment = (text: string) => {
+  const addComment = async (text: string) => {
     if (!selectedItemId) return;
 
-    setComments((prevComments) => {
-      const itemComments = prevComments[selectedItemId] ?? [];
+    const itemComments = comments[selectedItemId] ?? [];
 
-      return {
-        ...prevComments,
-        [selectedItemId]: [
-          ...itemComments,
-          {
-            id: uuid.v4().toString(),
-            text,
-          },
-        ],
-      };
-    });
+    const newItemComment = {
+      id: uuid.v4().toString(),
+      text,
+    };
+
+    const newComments = {
+      ...comments,
+      [selectedItemId]: [
+        ...itemComments,
+        newItemComment,
+      ],
+    };
+
+    setComments(newComments);
+
+    try {
+      await AsyncStorage.setItem(COMMENTS_STORAGE_KEY, JSON.stringify(newComments));
+    } catch (error) {
+      console.error((error as Error).message);
+    }
   };
+
+  useEffect(() => {
+    AsyncStorage.getItem(COMMENTS_STORAGE_KEY)
+      .then((value) => {
+        if (value) {
+          const comments = JSON.parse(value);
+          setComments(comments);
+        } else {
+          setComments({});
+        }
+      })
+      .catch((error) => {
+        console.error((error as Error).message);
+      });
+  }, []);
 
   return (
     <View style={styles.container}>
