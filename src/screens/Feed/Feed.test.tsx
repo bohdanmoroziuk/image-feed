@@ -26,7 +26,12 @@ afterAll(() => server.close());
 
 describe('Feed', () => {
   it('renders a list of cards', async () => {
-    const { getByTestId } = render(<Feed />);
+    const { getByTestId } = render(
+      <Feed
+        comments={{}}
+        onPressComments={() => {}}
+      />
+    );
 
     expect(getByTestId('loader')).toBeDefined();
 
@@ -42,7 +47,12 @@ describe('Feed', () => {
       }),
     );
 
-    const { getByTestId } = render(<Feed />);
+    const { getByTestId } = render(
+      <Feed
+        comments={{}}
+        onPressComments={() => {}}
+      />
+    );
 
     await waitFor(() => {
       expect(getByTestId('error')).toBeDefined();
