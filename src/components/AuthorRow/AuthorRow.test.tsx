@@ -16,7 +16,7 @@ describe('AuthorRow', () => {
   });
 
   it('renders correctly', () => {
-    const { getByText } = render(
+    const { getByText, queryByText, rerender } = render(
       <AuthorRow
         fullName="First Last"
         linkText="Comments"
@@ -25,7 +25,16 @@ describe('AuthorRow', () => {
     );
 
     expect(getByText('FL')).toBeDefined();
-    expect(getByText('Comments')).toBeDefined();
+    expect(getByText('Comments')).not.toBeNull();
+
+    rerender(
+      <AuthorRow
+        fullName="First Last"
+      />
+    );
+
+    expect(getByText('FL')).toBeDefined();
+    expect(queryByText('Comments')).toBeNull();
   });
 
   it('calls the onPressLinkText handler when the link text is pressed', () => {

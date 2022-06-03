@@ -14,7 +14,7 @@ export const Avatar: FunctionComponent<AvatarProps> = ({
   initials,
   color,
 }) => {
-  const circle = useMemo(() => ({
+  const circleStyle = useMemo(() => ({
     width: size,
     height: size,
     borderRadius: size / 2,
@@ -22,7 +22,7 @@ export const Avatar: FunctionComponent<AvatarProps> = ({
   }), [size, color]);
 
   return (
-    <View style={[styles.avatar, circle]}>
+    <View style={[styles.avatar, circleStyle]}>
       <Text style={styles.initials}>
         {initials}
       </Text>
