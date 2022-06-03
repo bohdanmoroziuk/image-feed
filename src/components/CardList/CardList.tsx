@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 import { FlatList } from 'react-native';
 
-import { Comment } from 'src/types';
+import { Comments } from 'src/types';
 
 import Card from 'src/components/Card';
 import getImageUriFromId from 'src/utils/getImageUriFromId';
@@ -13,13 +13,13 @@ interface Item {
 
 export interface CardListProps {
   items: Item[];
-  commentsForItem: Record<string, Comment[]>;
+  comments: Comments;
   onPressComments: (id: string) => void;
 }
 
 export const CardList: FunctionComponent<CardListProps> = ({
   items,
-  commentsForItem,
+  comments,
   onPressComments,
 }) => {
   const keyExtractor = (item: Item) => item.id;
@@ -29,14 +29,14 @@ export const CardList: FunctionComponent<CardListProps> = ({
       onPressComments(item.id);
     };
 
-    const comments = commentsForItem[item.id];
+    const itemComments = comments[item.id];
 
     return (
       <Card
         key={item.id}
         fullName={item.author}
         image={{ uri: getImageUriFromId(item.id) }}
-        linkText={`${comments ? comments.length : 0} Comments`}
+        linkText={`${itemComments ? itemComments.length : 0} Comments`}
         onPressLinkText={handlePressLinkText}
       />
     );
@@ -45,7 +45,7 @@ export const CardList: FunctionComponent<CardListProps> = ({
   return (
     <FlatList
       data={items}
-      extraData={commentsForItem}
+      extraData={comments}
       renderItem={renderItem}
       keyExtractor={keyExtractor}
     />

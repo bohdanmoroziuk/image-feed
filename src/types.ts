@@ -7,3 +7,5 @@ export interface Comment {
   id: string;
   text: string;
 }
+
+export type Comments = Record<string, Comment[]>;

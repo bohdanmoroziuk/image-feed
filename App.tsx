@@ -3,28 +3,28 @@ import { View, Modal } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import uuid from 'react-native-uuid';
 
-import { Comment } from 'src/types';
+import { Comment, Comments } from 'src/types';
 
-import Feed from 'src/screens/Feed';
-import Comments from 'src/screens/Comments';
+import FeedScreen from 'src/screens/Feed';
+import CommentsScreen from 'src/screens/Comments';
 
 import styles from './App.styles';
 
 export default function App() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedItemId, setSelectedItemId] = useState<string | null>(null);
-  const [commentsForItem, setCommentsForItem] = useState<Record<string, Comment[]>>({});
+  const [comments, setComments] = useState<Comments>({});
 
   const selectedItemComments = useMemo(() => {
     return (
       selectedItemId 
-        ? commentsForItem[selectedItemId] 
-          ? commentsForItem[selectedItemId] 
+        ? comments[selectedItemId] 
+          ? comments[selectedItemId] 
           : [] 
         : []
     );
 
-  }, [selectedItemId, commentsForItem]);
+  }, [selectedItemId, comments]);
 
   const openCommentsScreen = (id: string) => {
     setIsModalVisible(true);
@@ -39,13 +39,13 @@ export default function App() {
   const addComment = (text: string) => {
     if (!selectedItemId) return;
 
-    setCommentsForItem((prevCommentsForItem) => {
-      const comments = prevCommentsForItem[selectedItemId] ?? [];
+    setComments((prevComments) => {
+      const itemComments = prevComments[selectedItemId] ?? [];
 
       return {
-        ...prevCommentsForItem,
+        ...prevComments,
         [selectedItemId]: [
-          ...comments,
+          ...itemComments,
           {
             id: uuid.v4().toString(),
             text,
@@ -58,9 +58,9 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <Feed
+      <FeedScreen
         style={styles.screen}
-        commentsForItem={commentsForItem}
+        comments={comments}
         onPressComments={openCommentsScreen}
       />
       <Modal
@@ -68,7 +68,7 @@ export default function App() {
         animationType="slide"
         onRequestClose={closeCommentsScreen}
       >
-        <Comments
+        <CommentsScreen
           style={styles.screen}
           comments={selectedItemComments}
           onClose={closeCommentsScreen}

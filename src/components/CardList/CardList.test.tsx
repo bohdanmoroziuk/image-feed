@@ -12,7 +12,7 @@ describe('CardList', () => {
     const { toJSON } = render(
       <CardList
         items={mockedItems}
-        commentsForItem={{}}
+        comments={{}}
         onPressComments={() => {}}
       />
     );
@@ -24,7 +24,7 @@ describe('CardList', () => {
     const { getByText } = render(
       <CardList
         items={mockedItems}
-        commentsForItem={{}}
+        comments={{}}
         onPressComments={() => {}}
       />
     );
