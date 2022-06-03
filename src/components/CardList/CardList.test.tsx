@@ -10,7 +10,11 @@ const mockedItems = [
 describe('CardList', () => {
   it('renders successfully', () => {
     const { toJSON } = render(
-      <CardList items={mockedItems} />
+      <CardList
+        items={mockedItems}
+        commentsForItem={{}}
+        onPressComments={() => {}}
+      />
     );
 
     expect(toJSON()).toMatchSnapshot()
@@ -18,7 +22,11 @@ describe('CardList', () => {
 
   it('renders correctly', () => {
     const { getByText } = render(
-      <CardList items={mockedItems} />
+      <CardList
+        items={mockedItems}
+        commentsForItem={{}}
+        onPressComments={() => {}}
+      />
     );
 
     expect(getByText(mockedItems[0].author)).toBeDefined();
