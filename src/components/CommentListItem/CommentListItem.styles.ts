@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-  comment: {
+  container: {
     marginLeft: 20,
     paddingVertical: 20,
     paddingRight: 20,

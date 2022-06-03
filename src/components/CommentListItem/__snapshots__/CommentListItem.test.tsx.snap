@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommentListItem renders successfully 1`] = `
+<View
+  style={
+    Object {
+      "borderBottomColor": "rgba(0, 0, 0, 0.05)",
+      "borderBottomWidth": 0.5,
+      "marginLeft": 20,
+      "paddingRight": 20,
+      "paddingVertical": 20,
+    }
+  }
+>
+  <Text>
+    Awesome
+  </Text>
+</View>
+`;
